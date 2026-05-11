@@ -1,0 +1,12 @@
+product,quantity,price,category
+Laptop,2,50000,Electronics
+Mouse,5,800,Accessories
+Keyboard,3,1500,Accessories
+Monitor,,12000,Electronics
+Mouse,5,800,Accessories
+Headphone,-2,2500,Audio
+Tablet,1,30000,Electronics
+Speaker,4,3500,Audio
+Laptop,2,50000,Electronics
+Charger,abc,1200,Accessories
+Webcam,3,,Electronics
