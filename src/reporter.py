@@ -7,7 +7,6 @@ def generate_report(df,analysis):
     df.to_csv("output/cleaned_data.csv", index=False)
     
     # create JSON report
-
     report = {
         "total_revenue": total_revenue,
         "average_revenue": avg_revenue,
