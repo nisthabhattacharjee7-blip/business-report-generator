@@ -8,5 +8,5 @@ Headphone,-2,2500,Audio
 Tablet,1,30000,Electronics
 Speaker,4,3500,Audio
 Laptop,2,50000,Electronics
-Charger,abc,1200,Accessories
+Charger,abc,-1200,Accessories
 Webcam,3,,Electronics

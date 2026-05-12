@@ -1,15 +1,13 @@
 import pandas as pd 
-
+from cleaner import clean_data
 
 df = pd.read_csv("data/sales.csv")
-print("\n == FULL DATA ==")
+df = clean_data(df)
+
+print("\n=== ORIGINAL DATA ===")
 print(df)
 
-print("\n == Data info ==")
-print(df.info())
+cleaned_df = clean_data(df)
 
-print("\n == Missing Values ==")
-print(df.isnull().sum())
-
-print("\n == DUBLICATES ==")
-print(df.duplicated().sum())
+print("\n=== CLEANED DATA ===")
+print(cleaned_df)
