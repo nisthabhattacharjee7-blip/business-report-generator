@@ -21,7 +21,6 @@ print("\n=== ANALYSIS REPORTS ===")
 generate_report(cleaned_df, analysis)
 
 total_revenue, avg_revenue, top_products = analysis
-
 print("\nTotal Revenue:", total_revenue)
 print("Average Revenue:", avg_revenue)
 print("Top Product:", top_products)
