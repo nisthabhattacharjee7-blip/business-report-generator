@@ -1,0 +1,3 @@
+Total Revenue: 152500.0
+Average Revenue: 30500.0
+Top Product: Laptop
