@@ -1,0 +1,13 @@
+2026-05-14 11:16:29,414 - INFO - Pipeline started
+2026-05-14 11:16:29,430 - INFO - csv loaded successfully
+2026-05-14 11:16:29,443 - INFO - Data cleaned successfully
+2026-05-14 11:16:29,451 - INFO - Analysis completed successfully
+2026-05-14 11:16:29,458 - INFO - Report generated successfully
+2026-05-14 11:16:29,459 - INFO - Pipeline completed
+2026-05-14 11:16:29,460 - INFO - csv loaded successfully
+2026-05-14 11:23:20,621 - INFO - Pipeline started
+2026-05-14 11:23:20,624 - INFO - CSV loaded successfully
+2026-05-14 11:23:20,632 - INFO - Data cleaned successfully
+2026-05-14 11:23:20,640 - INFO - Data analyzed successfully
+2026-05-14 11:23:20,647 - INFO - Reports generated successfully
+2026-05-14 11:23:20,650 - INFO - Pipeline completed successfully
