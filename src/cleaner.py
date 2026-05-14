@@ -15,5 +15,7 @@ def clean_data(df):
 
     # Remove negative quantities
     df = df[df["quantity"] >= 0]
+    # Remove negative prices
+    df = df[df["price"] >= 0]
 
     return df
