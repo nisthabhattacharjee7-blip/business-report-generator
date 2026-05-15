@@ -1,8 +1,9 @@
+
 # Business Report Generator
 
-A modular Python-based data processing and reporting pipeline designed to clean raw sales data, perform business analysis, and generate structured reports automatically.
+A modular Python-based data processing and reporting pipeline that cleans raw sales data, stores it in a SQLite database, performs business analytics, and automatically generates structured reports.
 
-This project demonstrates foundational data engineering and automation concepts including data cleaning, transformation, logging, configuration management, and report generation.
+This project demonstrates foundational concepts used in real-world data engineering and analytics workflows including ETL pipelines, SQL integration, logging systems, modular architecture, and automated reporting.
 
 ---
 
@@ -10,7 +11,9 @@ This project demonstrates foundational data engineering and automation concepts 
 
 - Automated sales data cleaning
 - Missing value and duplicate handling
-- Revenue analysis and business metrics
+- Revenue and business analytics
+- SQLite database integration
+- SQL-based analytical queries
 - CSV, JSON, and text report generation
 - Logging and error handling system
 - Config-driven architecture
@@ -22,6 +25,8 @@ This project demonstrates foundational data engineering and automation concepts 
 
 - Python
 - Pandas
+- SQLite
+- SQL
 - JSON
 - Python Logging Module
 - Git & GitHub
@@ -35,7 +40,9 @@ Raw CSV Data
       ↓
 Data Cleaning Pipeline
       ↓
-Business Analysis
+SQLite Database Storage
+      ↓
+SQL Analytics Queries
       ↓
 Report Generation
       ↓
@@ -65,8 +72,10 @@ business_report_generator/
 │   ├── cleaner.py
 │   ├── analyzer.py
 │   ├── reporter.py
-│   └── utils.py
+│   ├── utils.py
+│   └── database.py
 │
+├── sales.db
 ├── config.json
 ├── .gitignore
 └── README.md
@@ -81,6 +90,7 @@ The pipeline automatically calculates:
 - Total Revenue
 - Average Revenue per Order
 - Top Selling Product
+- SQL-based Revenue Analytics
 
 ---
 
@@ -96,6 +106,39 @@ The cleaning pipeline performs:
 
 ---
 
+# Database Operations
+
+The SQLite integration supports:
+
+- Database creation
+- Table creation
+- Data insertion
+- SQL analytics queries
+- Persistent structured storage
+
+---
+
+# Example SQL Query
+
+```sql
+SELECT SUM(quantity * price)
+FROM sales;
+```
+
+---
+
+# Generated Output Files
+
+| File | Description |
+|---|---|
+| cleaned_sales.csv | Cleaned dataset |
+| report.json | Structured business report |
+| report.txt | Human-readable report |
+| sales.db | SQLite database |
+| app.log | Pipeline execution logs |
+
+---
+
 # How to Run
 
 ## Clone Repository
@@ -104,10 +147,16 @@ The cleaning pipeline performs:
 git clone <repository-url>
 ```
 
-## Navigate to Project
+## Navigate to Project Directory
 
 ```bash
 cd business_report_generator
+```
+
+## Install Dependencies
+
+```bash
+pip install pandas
 ```
 
 ## Run the Pipeline
@@ -118,23 +167,12 @@ python src/main.py
 
 ---
 
-# Output Files
-
-The system automatically generates:
-
-| File | Description |
-|---|---|
-| cleaned_sales.csv | Cleaned dataset |
-| report.json | Structured business report |
-| report.txt | Human-readable report |
-| app.log | Pipeline execution logs |
-
----
-
 # Engineering Concepts Demonstrated
 
 - ETL Pipeline Design
 - Modular Programming
+- SQL Integration
+- Database Management
 - Configuration Management
 - Logging Systems
 - Error Handling
@@ -145,12 +183,14 @@ The system automatically generates:
 
 # Future Improvements
 
-- SQL database integration
-- Interactive dashboards
+- Interactive data visualizations
+- Dashboard integration
 - API-based data ingestion
 - Automated scheduling
 - Cloud deployment
 - Docker containerization
+- Advanced SQL analytics
+- Real-time data processing
 
 ---
 
