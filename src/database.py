@@ -30,3 +30,13 @@ def insert_data(con, df):
     
     
     con.commit()  
+
+
+def get_total_revenue(con):
+    cursor = con.cursor()
+    cursor.execute('''
+    SELECT SUM(quantity * price) 
+    FROM sales''')
+    
+    total_revenue = cursor.fetchone()
+    return [0]
