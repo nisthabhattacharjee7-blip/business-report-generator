@@ -6,7 +6,7 @@ from analyzer import analyze_df
 from reporter import generate_report
 from utils import log_message
 from database import create_connection , create_table, insert_data 
-
+from database import get_total_revenue
 
 try:
 
@@ -35,6 +35,10 @@ try:
     # insert data into database
     insert_data(con, cleaned_df)
     print("\nData inserted into database successfully")
+    
+    # Get total revenue from database
+    total_revenue = get_total_revenue(con)
+    print(f"\nTotal Revenue from Database: {total_revenue}")
 
     # Analyze data
     analysis = analyze_df(cleaned_df)
