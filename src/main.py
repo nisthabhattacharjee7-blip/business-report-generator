@@ -5,7 +5,7 @@ from cleaner import clean_data
 from analyzer import analyze_df
 from reporter import generate_report
 from utils import log_message
-from database import create_connection , create_table
+from database import create_connection , create_table, insert_data 
 
 
 try:
@@ -31,6 +31,10 @@ try:
     con = create_connection()
     create_table(con)
     print("\nDatabase setup completed successfully")
+    
+    # insert data into database
+    insert_data(con, cleaned_df)
+    print("\nData inserted into database successfully")
 
     # Analyze data
     analysis = analyze_df(cleaned_df)
