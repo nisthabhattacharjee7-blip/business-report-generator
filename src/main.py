@@ -7,6 +7,7 @@ from reporter import generate_report
 from utils import log_message
 from database import create_connection , create_table, insert_data 
 from database import get_total_revenue
+from visualizer import revenue_chart
 
 try:
 
@@ -49,6 +50,9 @@ try:
     # Generate reports
     generate_report(cleaned_df, analysis)
     log_message("Reports generated successfully")
+    
+    # Create revenue chart
+    revenue_chart(cleaned_df)
 
     # Load config file
     with open("config.json", "r") as config_file:
