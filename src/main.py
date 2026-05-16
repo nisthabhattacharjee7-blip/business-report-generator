@@ -7,7 +7,11 @@ from reporter import generate_report
 from utils import log_message
 from database import create_connection , create_table, insert_data 
 from database import get_total_revenue
-from visualizer import revenue_chart, category_chart
+from visualizer import (
+    revenue_chart,
+    category_chart,
+    category_pie_chart
+)
 
 try:
 
@@ -56,7 +60,10 @@ try:
 
     # Create category revenue chart
     category_chart(cleaned_df)
-    
+
+    # Create category revenue pie chart
+    category_pie_chart(cleaned_df)
+
     # Load config file
     with open("config.json", "r") as config_file:
         config = json.load(config_file)
