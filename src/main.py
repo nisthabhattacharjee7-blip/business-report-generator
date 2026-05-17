@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas as pd 
 import json
 
 from cleaner import clean_data
@@ -6,7 +6,13 @@ from analyzer import analyze_df
 from reporter import generate_report
 from utils import log_message
 from database import create_connection , create_table, insert_data 
-from database import get_total_revenue
+from database import(
+    get_total_revenue,
+    get_category_revenue,
+    get_top_products,
+    get_category_counts
+)
+
 from visualizer import (
     revenue_chart,
     category_chart,
@@ -69,6 +75,16 @@ try:
         config = json.load(config_file)
 
     print("\nCompany Name:", config["company_name"])
+
+    # SQL Analytics
+    print("\n === SQL ANALYTICS ===")
+    print("\n category revenue:")
+    print(get_category_revenue(con))
+    print("\n top products:")
+    print(get_top_products(con))
+    print("\n category counts:")
+    print(get_category_counts(con))
+
 
     # Unpack analysis results
     total_revenue, avg_revenue, top_products = analysis
