@@ -15,8 +15,16 @@ df = pd.read_csv("data/sales.csv")
 # clean data
 cleaned_df = clean_data(df)
 
+# sidebar filter 
+st.sidebar.header("Filter Data")
+selected_category = st.sidebar.selectbox(
+    "Select Category",
+    cleaned_df['category'].unique()
+)
+filtered_df = cleaned_df[cleaned_df['category'] == selected_category]
+
 # analyze data
-total_revenue, avg_revenue, top_products = analyze_df(cleaned_df)
+total_revenue, avg_revenue, top_products = analyze_df(filtered_df)
 
 # KPIs
 st.header("Business KPIs")
@@ -28,17 +36,17 @@ st.metric("Top Product", top_products)
 
 # show cleaned data
 st.header("Cleaned Sales Data")
-st.dataframe(cleaned_df)
+st.dataframe(filtered_df)
 
 # Revenue by product chart 
 st.header("Revenue by Product")
 
-cleaned_df['revenue'] =(
-    cleaned_df['quantity'] *
-    cleaned_df['price']
+filtered_df['revenue'] =(
+    filtered_df['quantity'] *
+    filtered_df['price']
 )
 
-product_revenue = cleaned_df.groupby('product')['revenue'].sum()
+product_revenue = filtered_df.groupby('product')['revenue'].sum()
 fig, ax = plt.subplots()
 product_revenue.plot(
     kind='bar', 
