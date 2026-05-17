@@ -29,10 +29,22 @@ total_revenue, avg_revenue, top_products = analyze_df(filtered_df)
 # KPIs
 st.header("Business KPIs")
 
-st.metric("Total Revenue", f"${total_revenue:,.2f}")
-st.metric("Average Revenue ", f"${avg_revenue:,.2f}")
-st.metric("Top Product", top_products)
-
+col1,col2,col3 = st.columns(3)
+with col1:
+    st.metric(
+        "Total Revenue",
+        f"${total_revenue:,.2f}"
+    )
+with col2:
+    st.metric(
+        "Average Revenue",
+        f"${avg_revenue:,.2f}"
+    )
+with col3:
+    st.metric(
+        "Top Product",
+        top_products
+    )
 
 # show cleaned data
 st.header("Cleaned Sales Data")
