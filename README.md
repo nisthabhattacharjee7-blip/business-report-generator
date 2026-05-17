@@ -8,7 +8,7 @@ This project demonstrates real-world data engineering and analytics workflow con
 
 ## Live Dashboard
 
-[Live Demo] will be added after deployment 
+[Live Demo](https://sales-analytics-pipeline-0526.streamlit.app/)
 
 ---
 
