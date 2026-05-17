@@ -1,9 +1,8 @@
+# Sales Analytics Pipeline
 
-# Business Report Generator
+A modular Python-based data analytics pipeline that cleans raw sales data, stores it in a SQLite database, performs business analytics, generates visual insights, and automatically creates structured reports.
 
-A modular Python-based data processing and reporting pipeline that cleans raw sales data, stores it in a SQLite database, performs business analytics, and automatically generates structured reports.
-
-This project demonstrates foundational concepts used in real-world data engineering and analytics workflows including ETL pipelines, SQL integration, logging systems, modular architecture, and automated reporting.
+This project demonstrates foundational concepts used in real-world data engineering and analytics workflows including ETL pipelines, SQL integration, data visualization, logging systems, modular architecture, and automated reporting.
 
 ---
 
@@ -14,6 +13,7 @@ This project demonstrates foundational concepts used in real-world data engineer
 - Revenue and business analytics
 - SQLite database integration
 - SQL-based analytical queries
+- Data visualization using Matplotlib
 - CSV, JSON, and text report generation
 - Logging and error handling system
 - Config-driven architecture
@@ -27,6 +27,7 @@ This project demonstrates foundational concepts used in real-world data engineer
 - Pandas
 - SQLite
 - SQL
+- Matplotlib
 - JSON
 - Python Logging Module
 - Git & GitHub
@@ -44,6 +45,8 @@ SQLite Database Storage
       ↓
 SQL Analytics Queries
       ↓
+Data Visualization
+      ↓
 Report Generation
       ↓
 Logging & Configuration Management
@@ -54,7 +57,7 @@ Logging & Configuration Management
 # Project Structure
 
 ```text
-business_report_generator/
+sales-analytics-pipeline/
 │
 ├── data/
 │   └── sales.csv
@@ -62,18 +65,22 @@ business_report_generator/
 ├── output/
 │   ├── cleaned_sales.csv
 │   ├── report.json
-│   └── report.txt
+│   ├── report.txt
+│   ├── revenue_chart.png
+│   ├── category_revenue_chart.png
+│   └── category_pie_chart.png
 │
 ├── logs/
-│   └── app.log
+│   └── .gitkeep
 │
 ├── src/
 │   ├── main.py
 │   ├── cleaner.py
 │   ├── analyzer.py
 │   ├── reporter.py
-│   ├── utils.py
-│   └── database.py
+│   ├── visualizer.py
+│   ├── database.py
+│   └── utils.py
 │
 ├── sales.db
 ├── config.json
@@ -91,6 +98,7 @@ The pipeline automatically calculates:
 - Average Revenue per Order
 - Top Selling Product
 - SQL-based Revenue Analytics
+- Category-wise Revenue Insights
 
 ---
 
@@ -118,6 +126,22 @@ The SQLite integration supports:
 
 ---
 
+# Data Visualizations
+
+The project automatically generates:
+
+- Revenue by Product Bar Chart
+- Revenue by Category Bar Chart
+- Revenue Distribution Pie Chart
+
+Generated chart outputs are stored inside:
+
+```text
+output/
+```
+
+---
+
 # Example SQL Query
 
 ```sql
@@ -134,6 +158,9 @@ FROM sales;
 | cleaned_sales.csv | Cleaned dataset |
 | report.json | Structured business report |
 | report.txt | Human-readable report |
+| revenue_chart.png | Revenue by product visualization |
+| category_revenue_chart.png | Revenue by category visualization |
+| category_pie_chart.png | Revenue distribution pie chart |
 | sales.db | SQLite database |
 | app.log | Pipeline execution logs |
 
@@ -150,13 +177,13 @@ git clone <repository-url>
 ## Navigate to Project Directory
 
 ```bash
-cd business_report_generator
+cd sales-analytics-pipeline
 ```
 
 ## Install Dependencies
 
 ```bash
-pip install pandas
+pip install pandas matplotlib
 ```
 
 ## Run the Pipeline
@@ -173,6 +200,7 @@ python src/main.py
 - Modular Programming
 - SQL Integration
 - Database Management
+- Data Visualization
 - Configuration Management
 - Logging Systems
 - Error Handling
@@ -183,14 +211,14 @@ python src/main.py
 
 # Future Improvements
 
-- Interactive data visualizations
-- Dashboard integration
+- Interactive dashboard using Streamlit
+- Advanced SQL analytics
 - API-based data ingestion
 - Automated scheduling
 - Cloud deployment
 - Docker containerization
-- Advanced SQL analytics
 - Real-time data processing
+- Multi-file ingestion system
 
 ---
 
