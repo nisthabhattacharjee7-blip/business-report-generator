@@ -1,40 +1,49 @@
-# Sales Analytics Pipeline
+# 📊 Sales Analytics Pipeline
 
-A modular Python-based data analytics pipeline that cleans raw sales data, stores it in a SQLite database, performs advanced SQL analytics, generates visual insights, and automatically creates structured business reports.
+An end-to-end Python-based sales analytics platform that automates data cleaning, SQL analytics, business reporting, visualization, and interactive dashboard generation using Streamlit.
 
-This project demonstrates foundational concepts used in real-world data engineering and analytics workflows including ETL pipelines, SQL integration, data visualization, logging systems, modular architecture, and automated reporting.
+This project demonstrates real-world data engineering and analytics workflow concepts including ETL pipelines, SQLite integration, advanced SQL queries, visualization systems, logging, configuration management, and interactive business dashboards.
 
 ---
 
-# Features
+## Live Dashboard
+
+[Live Demo](YOUR_STREAMLIT_LINK_HERE)
+
+---
+
+## Features
 
 - Automated sales data cleaning
 - Missing value and duplicate handling
-- Revenue and business analytics
 - SQLite database integration
-- Advanced SQL analytical queries
+- Advanced SQL analytics queries
+- Revenue and business KPI generation
+- Interactive Streamlit dashboard
+- Dynamic category filtering
 - Data visualization using Matplotlib
-- CSV, JSON, and text report generation
-- Logging and error handling system
+- JSON and text report generation
 - Config-driven architecture
-- Modular and maintainable code structure
+- Logging and error handling system
+- Modular project structure
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 - Python
 - Pandas
 - SQLite
 - SQL
 - Matplotlib
+- Streamlit
 - JSON
 - Python Logging Module
 - Git & GitHub
 
 ---
 
-# Project Architecture
+## Project Architecture
 
 ```text
 Raw CSV Data
@@ -47,6 +56,8 @@ Advanced SQL Analytics
       ↓
 Data Visualization
       ↓
+Interactive Dashboard
+      ↓
 Report Generation
       ↓
 Logging & Configuration Management
@@ -54,7 +65,7 @@ Logging & Configuration Management
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 sales-analytics-pipeline/
@@ -70,6 +81,11 @@ sales-analytics-pipeline/
 │   ├── category_revenue_chart.png
 │   └── category_pie_chart.png
 │
+├── screenshots/
+│   ├── dashboard_main.png
+│   ├── revenue_chart.png
+│   └── sidebar_filter.png
+│
 ├── logs/
 │   └── .gitkeep
 │
@@ -80,32 +96,38 @@ sales-analytics-pipeline/
 │   ├── reporter.py
 │   ├── visualizer.py
 │   ├── database.py
+│   ├── dashboard.py
 │   └── utils.py
+│
+├── .streamlit/
+│   └── config.toml
 │
 ├── sales.db
 ├── config.json
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-# Business Metrics Generated
+## Business Metrics Generated
 
 The pipeline automatically calculates:
 
 - Total Revenue
 - Average Revenue per Order
 - Top Selling Product
+- Revenue by Product
+- Revenue by Category
+- Category-wise Product Count
 - SQL-based Revenue Analytics
-- Category-wise Revenue Insights
-- Product Quantity Insights
 
 ---
 
-# Data Cleaning Operations
+## Data Cleaning Operations
 
-The cleaning pipeline performs:
+The cleaning system performs:
 
 - Duplicate removal
 - Missing value handling
@@ -115,9 +137,9 @@ The cleaning pipeline performs:
 
 ---
 
-# Database Operations
+## Database Operations
 
-The SQLite integration supports:
+SQLite integration supports:
 
 - Database creation
 - Table creation
@@ -127,9 +149,9 @@ The SQLite integration supports:
 
 ---
 
-# Advanced SQL Analytics
+## Advanced SQL Analytics
 
-The project performs advanced SQL analytics using:
+The project performs advanced SQL operations using:
 
 - GROUP BY
 - ORDER BY
@@ -138,9 +160,9 @@ The project performs advanced SQL analytics using:
 
 ---
 
-# Example SQL Queries
+## Example SQL Queries
 
-## Revenue by Category
+### Revenue by Category
 
 ```sql
 SELECT category,
@@ -149,9 +171,7 @@ FROM sales
 GROUP BY category;
 ```
 
----
-
-## Top Selling Products
+### Top Selling Products
 
 ```sql
 SELECT product,
@@ -161,9 +181,7 @@ GROUP BY product
 ORDER BY total_quantity DESC;
 ```
 
----
-
-## Product Count by Category
+### Product Count by Category
 
 ```sql
 SELECT category,
@@ -174,15 +192,28 @@ GROUP BY category;
 
 ---
 
-# Data Visualizations
+## Dashboard Features
 
-The project automatically generates:
+The Streamlit dashboard includes:
+
+- Interactive KPI cards
+- Sidebar category filters
+- Revenue visualizations
+- Interactive data tables
+- Real-time filtered analytics
+- Business insights dashboard UI
+
+---
+
+## Data Visualizations
+
+Automatically generated charts include:
 
 - Revenue by Product Bar Chart
 - Revenue by Category Bar Chart
 - Revenue Distribution Pie Chart
 
-Generated chart outputs are stored inside:
+All generated visual outputs are stored inside:
 
 ```text
 output/
@@ -190,7 +221,7 @@ output/
 
 ---
 
-# Generated Output Files
+## Generated Output Files
 
 | File | Description |
 |---|---|
@@ -205,101 +236,140 @@ output/
 
 ---
 
-# How to Run
+## How to Run
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone <repository-url>
 ```
 
-## Navigate to Project Directory
+### Navigate to Project Directory
 
 ```bash
 cd sales-analytics-pipeline
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
-pip install pandas matplotlib
+pip install -r requirements.txt
 ```
 
-## Run the Pipeline
+### Run Analytics Pipeline
 
 ```bash
 python src/main.py
 ```
 
+### Run Streamlit Dashboard
+
+```bash
+python -m streamlit run src/dashboard.py
+```
+
 ---
 
-# Engineering Concepts Demonstrated
+## Engineering Concepts Demonstrated
 
 - ETL Pipeline Design
 - Modular Programming
-- SQL Integration
-- Database Management
+- SQLite Integration
 - Advanced SQL Analytics
+- Interactive Dashboard Development
 - Data Visualization
-- Configuration Management
 - Logging Systems
+- Configuration Management
 - Error Handling
-- Data Transformation
 - File-Based Data Processing
+- Business KPI Generation
 
 ---
 
-# Future Improvements
+## Dashboard Screenshots
 
-- Interactive dashboard using Streamlit
-- API-based data ingestion
-- Automated scheduling
+### Main Dashboard
+
+![Main Dashboard](screenshots/dashboard_main.png)
+
+---
+
+### Revenue Analytics
+
+![Revenue Analytics](screenshots/revenue_chart.png)
+
+---
+
+### Interactive Filters
+
+![Interactive Filters](screenshots/sidebar_filter.png)
+
+---
+
+## Future Improvements
+
 - Cloud deployment
+- Multi-page dashboards
+- API-based data ingestion
+- Real-time analytics
+- Automated scheduling
+- Authentication system
 - Docker containerization
-- Real-time data processing
-- Multi-file ingestion system
+- Advanced business forecasting
 
 ---
 
-# Author
+## Author
 
-Nistha Bhattacharjee# Sales Analytics Pipeline
+**Nistha Bhattacharjee**
 
-A modular Python-based data analytics pipeline that cleans raw sales data, stores it in a SQLite database, performs advanced SQL analytics, generates visual insights, and automatically creates structured business reports.
+Computer Science Undergraduate  
+Python Developer | Data Analytics Enthusiast | Backend & Automation Learner# 📊 Sales Analytics Pipeline
 
-This project demonstrates foundational concepts used in real-world data engineering and analytics workflows including ETL pipelines, SQL integration, data visualization, logging systems, modular architecture, and automated reporting.
+An end-to-end Python-based sales analytics platform that automates data cleaning, SQL analytics, business reporting, visualization, and interactive dashboard generation using Streamlit.
+
+This project demonstrates real-world data engineering and analytics workflow concepts including ETL pipelines, SQLite integration, advanced SQL queries, visualization systems, logging, configuration management, and interactive business dashboards.
 
 ---
 
-# Features
+## Live Dashboard
+
+[Live Demo](YOUR_STREAMLIT_LINK_HERE)
+
+---
+
+## Features
 
 - Automated sales data cleaning
 - Missing value and duplicate handling
-- Revenue and business analytics
 - SQLite database integration
-- Advanced SQL analytical queries
+- Advanced SQL analytics queries
+- Revenue and business KPI generation
+- Interactive Streamlit dashboard
+- Dynamic category filtering
 - Data visualization using Matplotlib
-- CSV, JSON, and text report generation
-- Logging and error handling system
+- JSON and text report generation
 - Config-driven architecture
-- Modular and maintainable code structure
+- Logging and error handling system
+- Modular project structure
 
 ---
 
-# Tech Stack
+## Tech Stack
 
 - Python
 - Pandas
 - SQLite
 - SQL
 - Matplotlib
+- Streamlit
 - JSON
 - Python Logging Module
 - Git & GitHub
 
 ---
 
-# Project Architecture
+## Project Architecture
 
 ```text
 Raw CSV Data
@@ -312,6 +382,8 @@ Advanced SQL Analytics
       ↓
 Data Visualization
       ↓
+Interactive Dashboard
+      ↓
 Report Generation
       ↓
 Logging & Configuration Management
@@ -319,7 +391,7 @@ Logging & Configuration Management
 
 ---
 
-# Project Structure
+## Project Structure
 
 ```text
 sales-analytics-pipeline/
@@ -335,6 +407,11 @@ sales-analytics-pipeline/
 │   ├── category_revenue_chart.png
 │   └── category_pie_chart.png
 │
+├── screenshots/
+│   ├── dashboard_main.png
+│   ├── revenue_chart.png
+│   └── sidebar_filter.png
+│
 ├── logs/
 │   └── .gitkeep
 │
@@ -345,32 +422,38 @@ sales-analytics-pipeline/
 │   ├── reporter.py
 │   ├── visualizer.py
 │   ├── database.py
+│   ├── dashboard.py
 │   └── utils.py
+│
+├── .streamlit/
+│   └── config.toml
 │
 ├── sales.db
 ├── config.json
+├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-# Business Metrics Generated
+## Business Metrics Generated
 
 The pipeline automatically calculates:
 
 - Total Revenue
 - Average Revenue per Order
 - Top Selling Product
+- Revenue by Product
+- Revenue by Category
+- Category-wise Product Count
 - SQL-based Revenue Analytics
-- Category-wise Revenue Insights
-- Product Quantity Insights
 
 ---
 
-# Data Cleaning Operations
+## Data Cleaning Operations
 
-The cleaning pipeline performs:
+The cleaning system performs:
 
 - Duplicate removal
 - Missing value handling
@@ -380,9 +463,9 @@ The cleaning pipeline performs:
 
 ---
 
-# Database Operations
+## Database Operations
 
-The SQLite integration supports:
+SQLite integration supports:
 
 - Database creation
 - Table creation
@@ -392,9 +475,9 @@ The SQLite integration supports:
 
 ---
 
-# Advanced SQL Analytics
+## Advanced SQL Analytics
 
-The project performs advanced SQL analytics using:
+The project performs advanced SQL operations using:
 
 - GROUP BY
 - ORDER BY
@@ -403,9 +486,9 @@ The project performs advanced SQL analytics using:
 
 ---
 
-# Example SQL Queries
+## Example SQL Queries
 
-## Revenue by Category
+### Revenue by Category
 
 ```sql
 SELECT category,
@@ -414,9 +497,7 @@ FROM sales
 GROUP BY category;
 ```
 
----
-
-## Top Selling Products
+### Top Selling Products
 
 ```sql
 SELECT product,
@@ -426,9 +507,7 @@ GROUP BY product
 ORDER BY total_quantity DESC;
 ```
 
----
-
-## Product Count by Category
+### Product Count by Category
 
 ```sql
 SELECT category,
@@ -439,15 +518,28 @@ GROUP BY category;
 
 ---
 
-# Data Visualizations
+## Dashboard Features
 
-The project automatically generates:
+The Streamlit dashboard includes:
+
+- Interactive KPI cards
+- Sidebar category filters
+- Revenue visualizations
+- Interactive data tables
+- Real-time filtered analytics
+- Business insights dashboard UI
+
+---
+
+## Data Visualizations
+
+Automatically generated charts include:
 
 - Revenue by Product Bar Chart
 - Revenue by Category Bar Chart
 - Revenue Distribution Pie Chart
 
-Generated chart outputs are stored inside:
+All generated visual outputs are stored inside:
 
 ```text
 output/
@@ -455,7 +547,7 @@ output/
 
 ---
 
-# Generated Output Files
+## Generated Output Files
 
 | File | Description |
 |---|---|
@@ -470,62 +562,89 @@ output/
 
 ---
 
-# How to Run
+## How to Run
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone <repository-url>
 ```
 
-## Navigate to Project Directory
+### Navigate to Project Directory
 
 ```bash
 cd sales-analytics-pipeline
 ```
 
-## Install Dependencies
+### Install Dependencies
 
 ```bash
-pip install pandas matplotlib
+pip install -r requirements.txt
 ```
 
-## Run the Pipeline
+### Run Analytics Pipeline
 
 ```bash
 python src/main.py
 ```
 
+### Run Streamlit Dashboard
+
+```bash
+python -m streamlit run src/dashboard.py
+```
+
 ---
 
-# Engineering Concepts Demonstrated
+## Engineering Concepts Demonstrated
 
 - ETL Pipeline Design
 - Modular Programming
-- SQL Integration
-- Database Management
+- SQLite Integration
 - Advanced SQL Analytics
+- Interactive Dashboard Development
 - Data Visualization
-- Configuration Management
 - Logging Systems
+- Configuration Management
 - Error Handling
-- Data Transformation
 - File-Based Data Processing
+- Business KPI Generation
 
 ---
 
-# Future Improvements
+## Dashboard Screenshots
 
-- Interactive dashboard using Streamlit
-- API-based data ingestion
-- Automated scheduling
+### Main Dashboard
+
+![Main Dashboard](screenshots/dashboard_main.png)
+
+---
+
+### Revenue Analytics
+
+![Revenue Analytics](screenshots/revenue_chart.png)
+
+---
+
+### Interactive Filters
+
+![Interactive Filters](screenshots/sidebar_filter.png)
+
+---
+
+## Future Improvements
+
 - Cloud deployment
+- Multi-page dashboards
+- API-based data ingestion
+- Real-time analytics
+- Automated scheduling
+- Authentication system
 - Docker containerization
-- Real-time data processing
-- Multi-file ingestion system
+- Advanced business forecasting
 
 ---
 
-# Author
+## Author
 
-Nistha Bhattacharjee
+**Nistha Bhattacharjee**
